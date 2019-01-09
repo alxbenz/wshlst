@@ -9,10 +9,11 @@
     "@types/react": "^16.7.18",
     "@types/react-dom": "^16.0.11",
     "classnames": "^2.2.6",
+    "hlpr": "https://github.com/alxbenz/hlpr.git",
+    "node-sass": "^4.11.0",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
-    "typescript": "^3.2.2",
-    "hlpr": "https://github.com/alxbenz/hlpr.git"
+    "typescript": "^3.2.2"
   },
   "devDependencies": {
     "react-scripts": "2.1.3"

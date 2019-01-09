@@ -1,0 +1,18 @@
+.category {
+  &--active {
+    .category__content {
+      display: block;
+    }
+  }
+
+  &__tab {
+    border: 1px solid grey;
+    padding: 20px;
+  }
+
+  &__content {
+    border: 1px solid grey;
+    padding: 20px;
+    display: none;
+  }
+}

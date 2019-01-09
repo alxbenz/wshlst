@@ -46,3 +46,11 @@ interface filterEntriesByCategory {
 interface Proxy {
   (): void;
 }
+
+interface toggleKeyInObjectArray {
+  (keyname: string, objectId: string, array: any[], idName?: string): any[];
+}
+
+interface formatValueToCurrency {
+  (value: number, currency?: string, lang?: string): string;
+}

@@ -7,6 +7,20 @@ class Wshlst extends Component<WshlstDetails, WshlstDetails> {
     this.setState(this.props);
   }
 
+  setActiveCategory: setActiveCategory = cateogryId => {
+    const categories = this.state.categories;
+
+    const newCategories:CategoryDetails[] = categories.map(category => {
+      category.categoryId === cateogryId
+        ? (category.isActive = true)
+        : (category.isActive = false);
+
+      return category;  
+    });
+
+    this.setState({categories: newCategories});
+  };
+
   toggleProductReservation: toggleEntry = entryId => {
     const entries = this.state.entries;
 
@@ -19,7 +33,7 @@ class Wshlst extends Component<WshlstDetails, WshlstDetails> {
     const entries = this.state.entries;
 
     this.setState({
-      entries: toggleKeyInObjectArray('isOpen', entryId, entries)
+      entries: toggleKeyInObjectArray('isOpen', entryId, entries) 
     });
   };
 
@@ -38,8 +52,9 @@ class Wshlst extends Component<WshlstDetails, WshlstDetails> {
           <Category
             toggleProductReservation={this.toggleProductReservation}
             toggleProductVisibility={this.toggleProductVisibility}
+            setActiveCategory={this.setActiveCategory}
             {...category}
-            entries={this.filterEntriesByCategory(entries, category.id)}
+            entries={this.filterEntriesByCategory(entries, category.categoryId)}
             key={index}
           />
         ))}

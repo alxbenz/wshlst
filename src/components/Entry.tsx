@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import classNames from 'classnames';
 
+import './Entry.scss';
+import { formatValueToCurrency } from '../helper';
+
 class Entry extends Component<EntryProps, {}> {
   toggleProductReservation:Proxy = () => {
     this.props.toggleProductReservation(this.props.entryId);
@@ -20,7 +23,7 @@ class Entry extends Component<EntryProps, {}> {
       <div className={classes}>
         <div className="entry__glance" onClick={this.toggleProductVisibility}>
           <span>{this.props.title}</span>
-          <span>{this.props.cost}</span>
+          <span>{formatValueToCurrency(this.props.cost)}</span>
           <span>{this.props.isOpen ? '-' : '+'}</span>
         </div>
         <div className="entry__details">

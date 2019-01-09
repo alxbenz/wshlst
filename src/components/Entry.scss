@@ -1,0 +1,18 @@
+.entry {
+  &--isReserved {
+    background: lightcoral;
+  }
+
+  &--isOpen {
+    .entry__details {
+      display: block;
+    }
+  }
+
+  &__glance {
+  }
+
+  &__details {
+    display: none;
+  }
+}
